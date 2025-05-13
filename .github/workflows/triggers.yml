@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '**.js'
+  issues:
+    types:
+      - labeled
+  workflow_dispatch:
+    inputs:
+      lenguaje_favorito:
+        description: 'Lenguaje favorito'
+        default: JavaScript
+        required: true
+        type: choice
+        options:
+        - Python
+        - JavaScript
+        - Go
+      nombre:
+        description: 'Lorena'
+        required: true
+        default: Lore
+        type: string
+  schedule:
+    - cron:  '15 22 * * *'
