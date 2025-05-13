@@ -1,0 +1,22 @@
+name: Saludo usando variables
+run-name: ¡Estoy aprendiendo a usar Variables Dinámicas!
+on:
+  workflow_dispatch
+
+jobs:
+  saludo-variables:
+    runs-on: ubuntu-latest
+    env:
+      SALUDO: Hola
+      DIA_DE_SEMANA: ${{ github.event.inputs.dia || '' }}
+      NOMBRE: ${{ github.actor }}
+      
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Obtener día actual
+        run: echo "DIA_DE_SEMANA=$(date +%A)" >> $GITHUB_ENV
+        
+      - name: Saludar
+        run: echo "$SALUDO, $NOMBRE. Hoy es $DIA_DE_SEMANA!"
