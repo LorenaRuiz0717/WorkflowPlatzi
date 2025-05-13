@@ -1,3 +1,5 @@
+name: Triggers
+run-name: ¡Estoy aprendiendo a usar diferentes Triggers!
 on:
   push:
     branches:
