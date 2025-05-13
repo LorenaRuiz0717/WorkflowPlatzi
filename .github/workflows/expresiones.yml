@@ -1,0 +1,11 @@
+name: Expresiones
+on:
+  push:
+    branches:
+      - main
+jobs:
+  dummy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dummy Step
+        run: echo "Este es solo un archivo temporal para evitar errores."
