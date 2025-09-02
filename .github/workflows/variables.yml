@@ -13,7 +13,7 @@ jobs:
       
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         
       - name: Obtener día actual
         run: echo "DIA_DE_SEMANA=$(date +%A)" >> $GITHUB_ENV
